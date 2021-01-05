@@ -35,6 +35,14 @@ class AccountController < ApplicationController
             redirect '/login'
         end       
     end    
+
+    post '/account/delete_account/:account_id' do
+        if logged_in?
+            Account.delete_by(account_id: params[:account_id])
+        else
+            redirect '/accounts'
+        end
+    end
 end
 
         

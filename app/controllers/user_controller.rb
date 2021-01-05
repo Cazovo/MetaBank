@@ -5,7 +5,7 @@ class UserController < ApplicationController
     end
     
     post '/create_user' do
-        user = User.create(name: params[:name]),
+        user = User.create(name: params[:name],
         email: params[:email],
         password: params[:password],
         first_name: params[:first_name],
